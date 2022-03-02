@@ -35,7 +35,7 @@ U+2714    &#10004;    true
 U+274C    &#10060;    false
 
 ## Operands
-U+2716  &#10006;  multiply (browsers show multiply and plus as same emoji)
+U+2716  &#10006;  multiply (some browsers might show multiply and plus as same emoji)
 
 U+2795  &#10133;   plus
 
