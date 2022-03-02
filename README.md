@@ -48,7 +48,7 @@ U+25B6  &#9654;   opening brace
 
 U+25C0  &#9664;   closing brace
 
-## Priority of operation
+## Priority of operations
 
 1st level: &#9654; & &#9664;
 
