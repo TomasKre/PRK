@@ -35,6 +35,7 @@ U+2714    &#10004;    true
 U+274C    &#10060;    false
 
 ## Operands
+
 U+2716  &#10006;  multiply (some browsers might show multiply and plus as same emoji)
 
 U+2795  &#10133;   plus
@@ -44,9 +45,10 @@ U+2796  &#10134;   minus
 U+2797  &#10135;   divide
 
 ## Brackets
-U+25B6  &#9654;   opening brace
 
-U+25C0  &#9664;   closing brace
+U+25B6  &#9654;   opening bracket
+
+U+25C0  &#9664;   closing bracket
 
 ## Priority of operations
 
