@@ -22,13 +22,15 @@ hexa-digit = "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "
 
 &#128291; = ["+" | "-"] (digit)+ . (digit)+
 
-~~### Char~~
+### Char
 
-~~&#128289;~~
+&#128289; = "'" [0-9a-zA-Z] "'"
 
-~~### String~~
+### String
 
-~~&#128288;~~
+&#128288; = """ (&#128289; | symbol)* """
+
+symbol = "_" | "." | "," | " " | "\n" | "\r" | ":" | ";" | "?" | "!" | "~" | "+" | "-" | "*" | "/" | "="
 
 ### Boolean
 
@@ -42,7 +44,9 @@ hexa-digit = "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "
 
 ## Operands
 
-&#10006;  multiply*
+&#11013;   assign
+
+&#10006;   multiply*
 
 &#10133;   plus
 
@@ -50,9 +54,9 @@ hexa-digit = "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "
 
 &#10135;   divide
 
-&#129668;&#10006; power
+&#10024;&#10006; power
 
-&#129668;&#10135; root
+&#10024;&#10135; root
 
 ## Brackets
 
@@ -64,7 +68,7 @@ hexa-digit = "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "
 
 1st level: &#9654; & &#9664;
 
-2nd level: &#129668;&#10006; & &#129668;&#10135;
+2nd level: &#10024;&#10006; & &#10024;&#10135;
 
 3rd level: &#10006; & &#10135;
 
@@ -86,6 +90,8 @@ U+2714    &#10004;
 
 U+274C    &#10060;
 
+U+2B05  &#11013;
+
 U+2716  &#10006;
 
 U+2795  &#10133;
@@ -102,10 +108,9 @@ U+1F171 &#127345;
 
 U+1F170 &#127344;
 
-U+1FA84 &#129668;
+U+2728 &#10024;
 
 ---
 
-*some browsers and some versions might show multiply and plus as same emoji (Win10 actual Chrome version)
+*according to browser, operating system and their versions some emojis might show multiply and plus as same emoji
 
-**some emojis may not be displayed according to browser (and its version) 
