@@ -34,13 +34,15 @@ hexa-digit = "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "
 
 &#10067;    1bit (1byte)
 
+&#10067; = &#10004; | &#10060;
+
 &#10004;    true
 
 &#10060;    false
 
 ## Operands
 
-&#10006;  multiply (some browsers (Google Chrome) might show multiply and plus as same emoji)
+&#10006;  multiply*
 
 &#10133;   plus
 
@@ -101,3 +103,9 @@ U+1F171 &#127345;
 U+1F170 &#127344;
 
 U+1FA84 &#129668;
+
+---
+
+*some browsers and some versions might show multiply and plus as same emoji (Win10 actual Chrome version)
+
+**some emojis may not be displayed according to browser (and its version) 
