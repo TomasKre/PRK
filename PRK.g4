@@ -26,10 +26,10 @@ expressionPRK : LPAR WS* expressionPRK WS* RPAR
 assignmentToVarPRK : (HEXALPHA | ALPHA | US)* WS* ASS WS* expressionPRK;
 declarationPRK: declareBooleanPRK | declareIntegerPRK | declareFloatPRK | declareCharPRK | declareStringPRK;
 declareBooleanPRK : BOOL WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* booleanPRK;
-declareIntegerPRK : BOOL WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* integerPRK;
-declareFloatPRK : BOOL WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* floatPRK;
-declareCharPRK : BOOL WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* charPRK;
-declareStringPRK : BOOL WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* stringPRK;
+declareIntegerPRK : INT WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* integerPRK;
+declareFloatPRK : FLOAT WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* floatPRK;
+declareCharPRK : CHAR WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* charPRK;
+declareStringPRK : STRING WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* stringPRK;
 
 ZERO : '0';
 ONE : '1';
