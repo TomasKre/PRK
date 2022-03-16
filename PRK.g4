@@ -20,7 +20,7 @@ expressionPRK : LPAR WS* expressionPRK WS* RPAR
               | expressionPRK WS* (MUL | DIV) WS* expressionPRK
               | expressionPRK WS* (ADD | SUB) WS* expressionPRK
               | WS* integerPRK WS*
-              | WS* floatPRK WS*
+              | WS* floatPRK WS* //nepridat sem i boolean, char, string a pak lexikalne hlidat?
               | WS* (HEXALPHA | ALPHA | US)+ WS*
               ;
 assignmentToVarPRK : (HEXALPHA | ALPHA | US)* WS* ASS WS* expressionPRK;
