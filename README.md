@@ -100,5 +100,5 @@ symbol = "_" | "." | "," | " " | "\n" | "\r" | ":" | ";" | "?" | "!" | "~" | "+"
 
 ---
 
-*according to browser, operating system and their versions some emojis might show multiply and plus as same emoji
+*according to browser, operating system and their versions multiply and plus might be shown as same emoji
 
