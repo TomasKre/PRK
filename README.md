@@ -79,8 +79,7 @@ symbol = "_" | "." | "," | " " | "\n" | "\r" | ":" | ";" | "?" | "!" | "~" | "+"
 ## Test calculator
 
 1. Open preferably Git Bash (Windows cmd doesn't work) at directory with this project.
-2A. Type: echo "<your_expression>" | java MainVisit
-2B. Type: java MainVisit "<input_filename>"
+2. Type: [echo "<your_expression>" | java MainVisit] OR [java MainVisit "<input_filename>"]
 3. Output will be printed to console
 
 At the moment calculator supports: power, square, multiplication, division, addition, substraction and parenthesis.
