@@ -9,7 +9,6 @@ BINPREFIX : '🅱';
 HEXALPHA : 'a'..'f' | 'A'..'F';
 ALPHA: 'a'..'z' | 'A'..'Z';
 DOT : '.';
-WS : ' ';
 US : '_';
 NL : '\n' | '\r' | '\r\n' | '\n\r';
 SYMBOL : ',' | ':' | ';' | '?' | '!' | '~' | '+' | '-' | '*' | '/' | '=';
@@ -29,9 +28,10 @@ INT : '🔢';
 FLOAT : '🔣';
 CHAR : '🔡';
 STRING : '🔠';
+WS : (' ' | '\t')+ -> skip;
+ERROR : . ;
 
-syntax : file;
-file : line*;
+syntax : line*;
 line : declarationPRK
      | assignmentToVarPRK NL
      | NL
@@ -45,18 +45,18 @@ integerPRK : ZERO
 floatPRK : SIGN? (ZERO | ONE | NONZERO)+ DOT (ZERO | ONE | NONZERO)+; //ok
 charPRK : '\'' (ZERO | ONE | NONZERO | HEXALPHA | ALPHA) '\''; //ok
 stringPRK : '"' (ZERO | ONE | NONZERO | HEXALPHA | ALPHA | DOT | WS | US | NL | SYMBOL)* '"'; //ok
-expressionPRK : LPAR WS* expressionPRK WS* RPAR
-              | expressionPRK WS* (POW | SQR) WS* expressionPRK
-              | expressionPRK WS* (MUL | DIV) WS* expressionPRK
-              | expressionPRK WS* (ADD | SUB) WS* expressionPRK
-              | WS* integerPRK WS*
-              | WS* floatPRK WS* //nepridat sem i boolean, char, string a pak lexikalne hlidat?
-              | WS* (HEXALPHA | ALPHA | US)+ WS*
+expressionPRK : lp=LPAR expressionPRK rp=RPAR               # Parenthesis
+              | expressionPRK op=(POW | SQR) expressionPRK  # PowSqr
+              | expressionPRK op=(MUL | DIV) expressionPRK  # MulDiv
+              | expressionPRK op=(ADD | SUB) expressionPRK  # AddSub
+              | integerPRK                                  # Int
+              | floatPRK                                    # Float
+              | (HEXALPHA | ALPHA | US)+                    # Name
               ;
-assignmentToVarPRK : (HEXALPHA | ALPHA | US)* WS* ASS WS* expressionPRK;
+assignmentToVarPRK : (HEXALPHA | ALPHA | US)* ASS expressionPRK;
 declarationPRK: declareBooleanPRK | declareIntegerPRK | declareFloatPRK | declareCharPRK | declareStringPRK;
-declareBooleanPRK : BOOL WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* booleanPRK WS* NL;
-declareIntegerPRK : INT WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* integerPRK WS* NL;
-declareFloatPRK : FLOAT WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* floatPRK WS* NL;
-declareCharPRK : CHAR WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* charPRK WS* NL;
-declareStringPRK : STRING WS* (HEXALPHA | ALPHA | US)* WS* ASS WS* stringPRK WS* NL;
+declareBooleanPRK : BOOL (HEXALPHA | ALPHA | US)* ASS booleanPRK NL;
+declareIntegerPRK : INT (HEXALPHA | ALPHA | US)* ASS integerPRK NL;
+declareFloatPRK : FLOAT (HEXALPHA | ALPHA | US)* ASS floatPRK NL;
+declareCharPRK : CHAR (HEXALPHA | ALPHA | US)* ASS charPRK NL;
+declareStringPRK : STRING (HEXALPHA | ALPHA | US)* ASS stringPRK NL;
