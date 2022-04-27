@@ -76,6 +76,14 @@ symbol = "_" | "." | "," | " " | "\n" | "\r" | ":" | ";" | "?" | "!" | "~" | "+"
 
 4th level: &#10133; & &#10134;
 
+## Test calculator
+
+1. Open preferably Git Bash (Windows cmd doesn't work) at directory with this project.
+2. Type: echo "<your_expression>" | java MainVisit
+3. Output will be printed to console
+
+At the moment calculator supports: power, square, multiplication, division, addition, substraction and parenthesis.
+
 ## Emoji to Unicode dictionary
 
 | Unicode | Emoji     | Decimal |
